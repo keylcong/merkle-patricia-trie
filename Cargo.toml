@@ -1,0 +1,20 @@
+[package]
+name = "merkle-patricia-trie"
+version = "0.1.0"
+authors = ["Dejavukong <foxcong.yolo@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hashbrown = { version = "0.9.1" }
+hash = { package = "keccak-hash", default-features = false, git = "https://github.com/keylcong/parity-common.git" }
+rlp  = { default-features = false, git = "https://github.com/keylcong/parity-common.git" }
+sp-std = { default-features = false, version = '2.0.0'}
+
+[features]
+default = ["std"]
+std = [
+    "hash/std",
+    "rlp/std",
+]
